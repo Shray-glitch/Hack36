@@ -12,9 +12,6 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -32,5 +29,7 @@
             android:src="@mipmap/ic_launcher_round" />
 
     </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <include layout="@layout/content_main" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

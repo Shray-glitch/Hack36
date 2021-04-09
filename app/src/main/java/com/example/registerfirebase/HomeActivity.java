@@ -20,7 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    Button btnProduct;
+    Button btnProduct,btnWishlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +54,21 @@ public class HomeActivity extends AppCompatActivity {
 //        setContentView(R.layout.content_main);
 //
         btnProduct = (Button)findViewById(R.id.product_details);
+        btnWishlist = (Button)findViewById(R.id.wishlist);
 
         btnProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent productDetailsIntent = new Intent(btnProduct.getContext(), ProductDetailsActivity.class);
                 btnProduct.getContext().startActivity(productDetailsIntent);
+            }
+        });
+
+        btnWishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent productDetailsIntent1 = new Intent(btnWishlist.getContext(), ViewAllActivity.class);
+                btnWishlist.getContext().startActivity(productDetailsIntent1);
             }
         });
 
