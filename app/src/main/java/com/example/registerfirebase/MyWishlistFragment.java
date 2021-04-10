@@ -76,14 +76,14 @@ public class MyWishlistFragment extends Fragment {
         wishlistRecyclerView.setLayoutManager(linearLayoutManager);
 
         List<WishlistModel> wishlistModelList = new ArrayList<>();
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
-        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+//        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
 
         WishlistAdapter wishlistAdapter = new WishlistAdapter(wishlistModelList, true);
         wishlistRecyclerView.setAdapter(wishlistAdapter);

@@ -1,21 +1,41 @@
 package com.example.registerfirebase;
 
 public class WishlistModel {
-    private Integer productImage;
+    private String productImage;
     private String productTitle;
     private String productPrice;
+    private String speciality;
+    private String experience;
 
-    public WishlistModel(Integer productImage, String productTitle, String productPrice) {
+    public WishlistModel(String productImage, String productTitle, String productPrice, String speciality, String experience) {
         this.productImage = productImage;
         this.productTitle = productTitle;
         this.productPrice = productPrice;
+        this.experience = experience;
+        this.speciality = speciality;
     }
 
-    public Integer getProductImage() {
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public String getProductImage() {
         return productImage;
     }
 
-    public void setProductImage(Integer productImage) {
+    public void setProductImage(String productImage) {
         this.productImage = productImage;
     }
 
