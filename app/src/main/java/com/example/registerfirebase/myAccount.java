@@ -1,6 +1,9 @@
 package com.example.registerfirebase;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +22,7 @@ public class myAccount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         logoutBtn = (Button) findViewById(R.id.logout_button);
         mAuth = FirebaseAuth.getInstance();
