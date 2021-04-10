@@ -14,7 +14,7 @@
 
         <activity android:name=".contactUs"
             android:parentActivityName=".HomeActivity" />
-        
+
         <activity
             android:name=".ViewAllActivity"
             android:theme="@style/AppTheme.NoActionBar"

@@ -1,6 +1,7 @@
 package com.example.registerfirebase;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -70,6 +71,18 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(new Intent(HomeActivity.this,ViewAllActivity.class));
                 }else if(id == R.id.nav_home){
                  //   startActivity(new Intent(HomeActivity.this,HomeActivity.class));
+                }else if(id == R.id.nav_open_shop){
+
+                    //GMAIL FOR OPEN SHOP
+                    Intent intent=new Intent(Intent.ACTION_SEND);
+                    String[] recipients={"onclicklisteners@gmail.com"};
+                    intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                    intent.putExtra(Intent.EXTRA_SUBJECT,"Subject text here...");
+                    intent.putExtra(Intent.EXTRA_TEXT,"Name :\nSpecializations:\nDescription:\nDetails:\n(Attach Pictures of your work)");
+                    intent.putExtra(Intent.EXTRA_CC,"mailcc@gmail.com");
+                    intent.setType("text/html");
+                    intent.setPackage("com.google.android.gm");
+                    startActivity(Intent.createChooser(intent, "Send mail"));
                 }
                 return false;
             }
