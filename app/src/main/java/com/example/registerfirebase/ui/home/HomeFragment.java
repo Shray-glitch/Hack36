@@ -79,6 +79,7 @@ public class HomeFragment extends Fragment {
         Ml.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ViewAllActivity.code = "De5s5hpCl6JXukkr7S8Y";
                 Intent productDetailsIntent1 = new Intent(Ml.getContext(), ViewAllActivity.class);
                 Ml.getContext().startActivity(productDetailsIntent1);
             }
@@ -87,6 +88,7 @@ public class HomeFragment extends Fragment {
         Design.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ViewAllActivity.code = "5bYqYkr0LRHnAatAWPyt";
                 Intent productDetailsIntent1 = new Intent(Design.getContext(), ViewAllActivity.class);
                 Design.getContext().startActivity(productDetailsIntent1);
             }

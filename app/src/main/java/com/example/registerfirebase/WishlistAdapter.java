@@ -44,6 +44,9 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
         String price = wishlistModelList.get(position).getProductPrice();
         String special = wishlistModelList.get(position).getSpeciality();
         String experience = wishlistModelList.get(position).getExperience();
+        String mailBtn = wishlistModelList.get(position).getMailBtn();
+
+
 
         viewHolder.setData(resource,title,price,special,experience);
 

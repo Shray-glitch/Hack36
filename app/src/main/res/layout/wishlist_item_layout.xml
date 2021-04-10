@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="1dp"
-    android:background="@color/colorAccent">
+    android:background="#0B2A68">
 
     <ImageView
         android:id="@+id/product_image"
@@ -22,17 +22,17 @@
 
     <TextView
         android:id="@+id/product_title1"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
+        android:autoSizeTextType="uniform"
         android:text="Cute Dog!!"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/product_image"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/product_price1"
@@ -42,7 +42,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="10dp"
         android:text="Rs.10000/-"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,13 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
         app:srcCompat="@drawable/ic_mail" />
 
     <TextView
@@ -68,7 +69,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:autoSizeTextType="uniform"
         android:text="Experience"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/special"
         app:layout_constraintStart_toEndOf="@+id/product_image"
@@ -77,15 +80,28 @@
 
     <TextView
         android:id="@+id/special"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
         android:text="Specialisation"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/product_price1"
         app:layout_constraintStart_toEndOf="@+id/product_image" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="250dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#6198BD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_price1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
