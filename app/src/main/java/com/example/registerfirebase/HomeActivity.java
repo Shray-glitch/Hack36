@@ -51,69 +51,25 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_user_account)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-
-                if(id == R.id.nav_contact_us){
-                    startActivity(new Intent(HomeActivity.this,contactUs.class));
-                }else if(id == R.id.nav_user_account){
-                    startActivity(new Intent(HomeActivity.this,myAccount.class));
-                }else if(id == R.id.nav_my_wishlist){
-                    startActivity(new Intent(HomeActivity.this,ViewAllActivity.class));
-                }else if(id == R.id.nav_home){
-                 //   startActivity(new Intent(HomeActivity.this,HomeActivity.class));
-                }else if(id == R.id.nav_open_shop){
-
-                    //GMAIL FOR OPEN SHOP
-                    Intent intent=new Intent(Intent.ACTION_SEND);
-                    String[] recipients={"onclicklisteners@gmail.com"};
-                    intent.putExtra(Intent.EXTRA_EMAIL, recipients);
-                    intent.putExtra(Intent.EXTRA_SUBJECT,"Subject text here...");
-                    intent.putExtra(Intent.EXTRA_TEXT,"Name :\nSpecializations:\nDescription:\nDetails:\n(Attach Pictures of your work)");
-                    intent.putExtra(Intent.EXTRA_CC,"mailcc@gmail.com");
-                    intent.setType("text/html");
-                    intent.setPackage("com.google.android.gm");
-                    startActivity(Intent.createChooser(intent, "Send mail"));
-                }
-                return false;
-            }
-        });
-
-        //setting onclick for drawer fragments
-//        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
-//            @Override
-//            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-//                int menuId = destination.getId();
-//                switch (menuId){
-//                    case R.id.nav_my_wishlist:
-//
-//                        break;
-//                }
-//            }
-//        });
-
 //        setContentView(R.layout.content_main);
 //
-        btnProduct = (Button)findViewById(R.id.product_details);
+//        btnProduct = (Button)findViewById(R.id.product_details);
+        btnWishlist = (Button)findViewById(R.id.wishlist);
 
-
-        //PRODUCT BUTTON ON HOME
-        btnProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent productDetailsIntent = new Intent(btnProduct.getContext(), ProductDetailsActivity.class);
-                btnProduct.getContext().startActivity(productDetailsIntent);
-            }
-        });
+//        btnProduct.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent = new Intent(btnProduct.getContext(), ProductDetailsActivity.class);
+//                btnProduct.getContext().startActivity(productDetailsIntent);
+//            }
+//        });
 
 //        //WISHLIST BUTTON ON HOME
 //        btnWishlist.setOnClickListener(new View.OnClickListener() {
