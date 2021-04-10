@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     Button btnProduct,btnWishlist;
+    private ImageButton Android,Web,Design,Ml;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,12 @@ public class HomeActivity extends AppCompatActivity {
 //                btnProduct.getContext().startActivity(productDetailsIntent);
 //            }
 //        });
+
+        Android = findViewById(R.id.android);
+        Web = findViewById(R.id.web);
+        Ml = findViewById(R.id.ml);
+        Design = findViewById(R.id.design);
+
 
         btnWishlist.setOnClickListener(new View.OnClickListener() {
             @Override

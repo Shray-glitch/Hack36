@@ -57,7 +57,7 @@ public class ViewAllActivity extends AppCompatActivity {
         firebaseFirestore.collection("CATEGORIES")
                 .document("ANDROID BACKEND")
                 .collection("TOP_DEALS")
-                .orderBy("index")
+//                .document("")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override

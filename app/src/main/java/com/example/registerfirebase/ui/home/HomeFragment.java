@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private ImageButton Android,Web,Design,Ml;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +49,10 @@ public class HomeFragment extends Fragment {
 //        return root;
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+
+
 
 //        GridView gridView = view.findViewById(R.id.grid_product_layout_gridview);
 //        TextView gridLayoutTitle = view.findViewById(R.id.grid_layout_title);
