@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,18 +29,19 @@ public class login extends AppCompatActivity {
     private FirebaseUser user;
     private FirebaseAuth.AuthStateListener mAuhListener;
     private EditText email,password;
-    private Button login, createAccountBtn, btnProduct;
+    //private Button login;, createAccountBtn, btnProduct;
+    private TextView createAccountBtn;
     //private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login_ui);
 
         email = (EditText) findViewById(R.id.email_edit_text);
         password = (EditText) findViewById(R.id.password_edit_text);
-        login = (Button) findViewById(R.id.login_button);
-        createAccountBtn = (Button) findViewById(R.id.create_account_button);
+        //login = (Button) findViewById(R.id.login_button);
+        createAccountBtn = (TextView) findViewById(R.id.create_account_button);
 
         //Initializing firebase
         mAuth = FirebaseAuth.getInstance();
@@ -71,9 +74,10 @@ public class login extends AppCompatActivity {
 //            }
 //        });
 
-        login.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = findViewById(R.id.login_button);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 String emailString = email.getText().toString();
                 String passwordString = password.getText().toString();
 
@@ -99,6 +103,36 @@ public class login extends AppCompatActivity {
                 }
             }
         });
+
+
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String emailString = email.getText().toString();
+//                String passwordString = password.getText().toString();
+//
+//                if(!emailString.equals("") && !passwordString.equals(""))
+//                {
+////                    progressDialog.setMessage("Logging In");
+////                    progressDialog.show();
+//
+//                    login(emailString,passwordString);
+//
+//                    //progressDialog.dismiss();
+//                    Intent intent = new Intent(login.this, HomeActivity.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );  //to clear stack of activities
+//                    startActivity(intent);
+//                }
+//                else{
+//                    if(emailString.equals("")){
+//                        Toast.makeText(com.example.registerfirebase.login.this,"Please Enter Email",Toast.LENGTH_SHORT).show();
+//                    }
+//                    else if(passwordString.equals("")){
+//                        Toast.makeText(com.example.registerfirebase.login.this,"Please Enter Password",Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            }
+//        });
 
         createAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
