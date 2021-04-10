@@ -67,9 +67,10 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(new Intent(HomeActivity.this,contactUs.class));
                 }else if(id == R.id.nav_user_account){
                     startActivity(new Intent(HomeActivity.this,myAccount.class));
-                }else if(id == R.id.nav_my_wishlist){
-                    startActivity(new Intent(HomeActivity.this,ViewAllActivity.class));
-                }else if(id == R.id.nav_home){
+                }
+//                else if(id == R.id.nav_my_wishlist){
+//                    startActivity(new Intent(HomeActivity.this,ViewAllActivity.class));
+                else if(id == R.id.nav_home){
                  //   startActivity(new Intent(HomeActivity.this,HomeActivity.class));
                 }else if(id == R.id.nav_open_shop){
 

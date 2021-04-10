@@ -75,13 +75,13 @@ public class ViewAllActivity extends AppCompatActivity {
                                                     documentSnapshot.get("title_"+x).toString(),
                                                     documentSnapshot.get("price_"+x).toString(),
                                                     documentSnapshot.get("special_"+x).toString(),
-                                           documentSnapshot.get("experience_"+x).toString()
-
+                                           documentSnapshot.get("experience_"+x).toString(),
+                                           documentSnapshot.get("mail Button String_"+x).toString()
                                             )
                                     );
                                 }
 
-                                WishlistAdapter adapter = new WishlistAdapter(wishlistModelList,false);
+                                WishlistAdapter adapter = new WishlistAdapter(wishlistModelList,false, ViewAllActivity.this);
                                 recyclerView.setAdapter(adapter);
                                 adapter.notifyDataSetChanged();
 

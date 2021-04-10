@@ -1,5 +1,7 @@
 package com.example.registerfirebase;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +22,12 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
 
     private List<WishlistModel> wishlistModelList;
     private Boolean wishlist;
+    private Context mcontext;
 
-    public WishlistAdapter(List<WishlistModel> wishlistModelList, Boolean wishlist) {
+    public WishlistAdapter(List<WishlistModel> wishlistModelList, Boolean wishlist, Context mcontext) {
         this.wishlistModelList = wishlistModelList;
         this.wishlist = wishlist;
+        this.mcontext = mcontext;
     }
 
     @NonNull
@@ -42,7 +46,25 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
         String experience = wishlistModelList.get(position).getExperience();
 
         viewHolder.setData(resource,title,price,special,experience);
+
+        viewHolder.mailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                String[] recipients={"onclicklisteners@gmail.com"};
+                intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject text here...");
+                intent.putExtra(Intent.EXTRA_TEXT,"Your Name :\nRequire Service of:\nDetails:");
+                intent.putExtra(Intent.EXTRA_CC,"mailcc@gmail.com");
+                intent.setType("text/html");
+                intent.setPackage("com.google.android.gm");
+                mcontext.startActivity(Intent.createChooser(intent, "Send mail"));
+            }
+
+        });
     }
+
 
     @Override
     public int getItemCount() {
@@ -54,7 +76,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
         private ImageView productImage;
         private TextView productTitle;
         private TextView productPrice,Experience,speciality;
-        private ImageButton deleteBtn;
+        private ImageButton mailBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,7 +85,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
             productPrice = itemView.findViewById(R.id.product_price1);
             speciality = itemView.findViewById(R.id.special);
             Experience = itemView.findViewById(R.id.experience);
-            deleteBtn = itemView.findViewById(R.id.delete_btn);
+            mailBtn = itemView.findViewById(R.id.mail_btn);
         }
         private void setData(String resource, String title, String price,String special, String experience){
           //  productImage.setImageResource(resource);
@@ -74,14 +96,14 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
             productPrice.setText(price);
             speciality.setText(special);
             Experience.setText(experience);
-            if(wishlist)
-            {
-                deleteBtn.setVisibility(View.VISIBLE);
-            }
-            else {
-                deleteBtn.setVisibility(View.GONE);
-            }
-            deleteBtn.setOnClickListener(new View.OnClickListener() {
+//            if(wishlist)
+//            {
+//                deleteBtn.setVisibility(View.VISIBLE);
+//            }
+//            else {
+//                deleteBtn.setVisibility(View.GONE);
+//            }
+            mailBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(itemView.getContext(),"Delete",Toast.LENGTH_SHORT).show();
