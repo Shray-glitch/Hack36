@@ -51,47 +51,47 @@ public class HomeFragment extends Fragment {
         GridView gridView = view.findViewById(R.id.grid_product_layout_gridview);
         TextView gridLayoutTitle = view.findViewById(R.id.grid_layout_title);
 
-        List<GridProductLayoutModel> gridProductLayoutModelList = new ArrayList<>();
-
-
-        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-
-        firebaseFirestore.collection("CATEGORIES")
-                .document("ANDROID BACKEND")
-                .collection("TOP_DEALS")
-                .orderBy("index")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
-                            for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
-                              //  List<GridProductLayoutModel> gridProductLayoutModelList = new ArrayList<>();
-                                long no_of_products = (long)documentSnapshot.get("no_of_products");
-
-                                for(long x = 1; x < no_of_products + 1; x++ )
-                                {
-                                    gridProductLayoutModelList.add(new GridProductLayoutModel(
-                                            documentSnapshot.get("product_image_"+x).toString(),
-                                            documentSnapshot.get("product_title_"+x).toString(),
-                                            documentSnapshot.get("product_price_"+x).toString()
-                                            )
-                                    );
-                                }
-
-                                gridView.setAdapter(new GridProductLayoutAdapter(gridProductLayoutModelList));
-
-                            //    return view;
-
-                            }
-
-                        }
-                        else {
-                            String error = task.getException().getMessage();
-                            Toast.makeText(getContext(),error, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+//        List<GridProductLayoutModel> gridProductLayoutModelList = new ArrayList<>();
+//
+//
+//        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+//
+//        firebaseFirestore.collection("CATEGORIES")
+//                .document("ANDROID BACKEND")
+//                .collection("TOP_DEALS")
+//                .orderBy("index")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if(task.isSuccessful()){
+//                            for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
+//                              //  List<GridProductLayoutModel> gridProductLayoutModelList = new ArrayList<>();
+//                                long no_of_products = (long)documentSnapshot.get("no_of_products");
+//
+//                                for(long x = 1; x < no_of_products + 1; x++ )
+//                                {
+//                                    gridProductLayoutModelList.add(new GridProductLayoutModel(
+//                                            documentSnapshot.get("product_image_"+x).toString(),
+//                                            documentSnapshot.get("product_title_"+x).toString(),
+//                                            documentSnapshot.get("product_price_"+x).toString()
+//                                            )
+//                                    );
+//                                }
+//
+//                                gridView.setAdapter(new GridProductLayoutAdapter(gridProductLayoutModelList));
+//
+//                            //    return view;
+//
+//                            }
+//
+//                        }
+//                        else {
+//                            String error = task.getException().getMessage();
+//                            Toast.makeText(getContext(),error, Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
 
 
 

@@ -11,6 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
 import java.util.List;
 
 public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHolder> {
@@ -32,11 +35,13 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        int resource = wishlistModelList.get(position).getProductImage();
+        String resource = wishlistModelList.get(position).getProductImage();
         String title = wishlistModelList.get(position).getProductTitle();
         String price = wishlistModelList.get(position).getProductPrice();
+        String special = wishlistModelList.get(position).getSpeciality();
+        String experience = wishlistModelList.get(position).getExperience();
 
-        viewHolder.setData(resource,title,price);
+        viewHolder.setData(resource,title,price,special,experience);
     }
 
     @Override
@@ -48,7 +53,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
 
         private ImageView productImage;
         private TextView productTitle;
-        private TextView productPrice;
+        private TextView productPrice,Experience,speciality;
         private ImageButton deleteBtn;
 
         public ViewHolder(@NonNull View itemView) {
@@ -56,12 +61,19 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.ViewHo
             productImage = itemView.findViewById(R.id.product_image);
             productTitle = itemView.findViewById(R.id.product_title1);
             productPrice = itemView.findViewById(R.id.product_price1);
+            speciality = itemView.findViewById(R.id.special);
+            Experience = itemView.findViewById(R.id.experience);
             deleteBtn = itemView.findViewById(R.id.delete_btn);
         }
-        private void setData(int resource, String title, String price){
-            productImage.setImageResource(resource);
+        private void setData(String resource, String title, String price,String special, String experience){
+          //  productImage.setImageResource(resource);
+
+            Glide.with(itemView.getContext()).load(resource).apply(new RequestOptions().placeholder(R.mipmap.ic_launcher)).into(productImage);
+
             productTitle.setText(title);
             productPrice.setText(price);
+            speciality.setText(special);
+            Experience.setText(experience);
             if(wishlist)
             {
                 deleteBtn.setVisibility(View.VISIBLE);

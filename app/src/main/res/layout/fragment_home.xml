@@ -30,7 +30,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
-            <include layout="@layout/grid_product_layout"/>
+<!--            <include layout="@layout/grid_product_layout"/>-->
 
 
         </LinearLayout>
