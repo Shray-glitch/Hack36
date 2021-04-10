@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RegisterFirebase">
-        <activity android:name=".ViewAllActivity"  android:theme="@style/AppTheme.NoActionBar" ></activity>
+        <activity android:name=".myAccount"
+            android:parentActivityName=".HomeActivity" />
+
+        <activity android:name=".contactUs"
+            android:parentActivityName=".HomeActivity" />
+
+        <activity
+            android:name=".ViewAllActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".HomeActivity"
+            />
         <activity
             android:name=".ProductDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar" />

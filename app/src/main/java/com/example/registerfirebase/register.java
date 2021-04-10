@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +29,7 @@ import java.util.Map;
 public class register extends AppCompatActivity {
 
     private EditText firstName, lastName, email, password, confirmPassword;
-    private Button createAccountBtn;
+    //private Button createAccountBtn;
     private DatabaseReference mDatabaseReference;
     private FirebaseDatabase mDatabase;
     private FirebaseAuth mAuth;
@@ -53,11 +54,12 @@ public class register extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email_edit_text_register);
         password = (EditText) findViewById(R.id.password_edit_text_register);
         confirmPassword = (EditText) findViewById(R.id.confirm_password_edit_text_register);
-        createAccountBtn = (Button) findViewById(R.id.create_account_button_register);
+     //   createAccountBtn = (Button) findViewById(R.id.create_account_button_register);
 
-        createAccountBtn.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = findViewById(R.id.create_account_button_register);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 String firstNameString = firstName.getText().toString().trim();
                 String lastNameString = lastName.getText().toString().trim();
                 String emailString = email.getText().toString().trim();
@@ -65,44 +67,44 @@ public class register extends AppCompatActivity {
                 String confirmPasswordString = confirmPassword.getText().toString().trim();
 
                 if(!( firstNameString.equals("") && lastNameString.equals("") && emailString.equals("")
-                            && passwordString.equals("") && confirmPasswordString.equals("")))
+                        && passwordString.equals("") && confirmPasswordString.equals("")))
                 {
 //                    if(passwordString != confirmPasswordString){
 //                        Toast.makeText(register.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
 //                    }
 //                    else{
-                        mProgressDialog.setMessage("Creating Account");
-                        mProgressDialog.show();
+                    mProgressDialog.setMessage("Creating Account");
+                    mProgressDialog.show();
 
-                        mAuth.createUserWithEmailAndPassword(emailString,passwordString)
-                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                                    @Override
-                                    public void onSuccess(AuthResult authResult) {
-                                        if(authResult != null)
-                                        {  //cloud database
-                                            Map<Object, String> userdata = new HashMap<>();
-                                            userdata.put("First Name", firstNameString);
-                                            userdata.put("Last Name", lastNameString);
+                    mAuth.createUserWithEmailAndPassword(emailString,passwordString)
+                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+                                    if(authResult != null)
+                                    {  //cloud database
+                                        Map<Object, String> userdata = new HashMap<>();
+                                        userdata.put("First Name", firstNameString);
+                                        userdata.put("Last Name", lastNameString);
 
-                                            firebaseFirestore.collection("USERS")
-                                                    .add(userdata)
-                                                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                                                        @Override
-                                                        public void onComplete(@NonNull Task<DocumentReference> task) {
-                                                                 if(task.isSuccessful()){
+                                        firebaseFirestore.collection("USERS")
+                                                .add(userdata)
+                                                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<DocumentReference> task) {
+                                                        if(task.isSuccessful()){
 
-                                                                     mProgressDialog.dismiss();
-                                                                     //now send the user to homescreen
-                                                                     Intent intent = new Intent(register.this, HomeActivity.class);
-                                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                                                     startActivity(intent);
-                                                                 }
-                                                                 else {
-                                                                     mProgressDialog.setMessage("Unsuccessful");
-                                                                     mProgressDialog.show();
-                                                                 }
+                                                            mProgressDialog.dismiss();
+                                                            //now send the user to homescreen
+                                                            Intent intent = new Intent(register.this, HomeActivity.class);
+                                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );  //to clear stack of activities
+                                                            startActivity(intent);
                                                         }
-                                                    });
+                                                        else {
+                                                            mProgressDialog.setMessage("Unsuccessful");
+                                                            mProgressDialog.show();
+                                                        }
+                                                    }
+                                                });
 
 //                                            String userid = mAuth.getCurrentUser().getUid();
 //                                            DatabaseReference currentUserDb = mDatabaseReference.child(userid);//fetching UID
@@ -115,16 +117,88 @@ public class register extends AppCompatActivity {
 //                                            Intent intent = new Intent(register.this, HomeActivity.class);
 //                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //                                            startActivity(intent);
-                                        }
                                     }
-                                });
-                 //   }
+                                }
+                            });
+                    //   }
                 }
                 else{
                     Toast.makeText(register.this,"Fill all fields", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
+//        createAccountBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String firstNameString = firstName.getText().toString().trim();
+//                String lastNameString = lastName.getText().toString().trim();
+//                String emailString = email.getText().toString().trim();
+//                String passwordString = password.getText().toString().trim();
+//                String confirmPasswordString = confirmPassword.getText().toString().trim();
+//
+//                if(!( firstNameString.equals("") && lastNameString.equals("") && emailString.equals("")
+//                            && passwordString.equals("") && confirmPasswordString.equals("")))
+//                {
+////                    if(passwordString != confirmPasswordString){
+////                        Toast.makeText(register.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+////                    }
+////                    else{
+//                        mProgressDialog.setMessage("Creating Account");
+//                        mProgressDialog.show();
+//
+//                        mAuth.createUserWithEmailAndPassword(emailString,passwordString)
+//                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                                    @Override
+//                                    public void onSuccess(AuthResult authResult) {
+//                                        if(authResult != null)
+//                                        {  //cloud database
+//                                            Map<Object, String> userdata = new HashMap<>();
+//                                            userdata.put("First Name", firstNameString);
+//                                            userdata.put("Last Name", lastNameString);
+//
+//                                            firebaseFirestore.collection("USERS")
+//                                                    .add(userdata)
+//                                                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+//                                                        @Override
+//                                                        public void onComplete(@NonNull Task<DocumentReference> task) {
+//                                                                 if(task.isSuccessful()){
+//
+//                                                                     mProgressDialog.dismiss();
+//                                                                     //now send the user to homescreen
+//                                                                     Intent intent = new Intent(register.this, HomeActivity.class);
+//                                                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );  //to clear stack of activities
+//                                                                     startActivity(intent);
+//                                                                 }
+//                                                                 else {
+//                                                                     mProgressDialog.setMessage("Unsuccessful");
+//                                                                     mProgressDialog.show();
+//                                                                 }
+//                                                        }
+//                                                    });
+//
+////                                            String userid = mAuth.getCurrentUser().getUid();
+////                                            DatabaseReference currentUserDb = mDatabaseReference.child(userid);//fetching UID
+////                                            currentUserDb.child("First Name").setValue(firstNameString);    //making child under that UID
+////                                            currentUserDb.child("Last Name").setValue(lastNameString);
+////                                            currentUserDb.child("Image").setValue("none");
+////
+////                                            mProgressDialog.dismiss();
+////                                            //now send the user to homescreen
+////                                            Intent intent = new Intent(register.this, HomeActivity.class);
+////                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+////                                            startActivity(intent);
+//                                        }
+//                                    }
+//                                });
+//                 //   }
+//                }
+//                else{
+//                    Toast.makeText(register.this,"Fill all fields", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
     }
 }
