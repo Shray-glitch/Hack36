@@ -50,13 +50,14 @@ public class login extends AppCompatActivity {
                 user = firebaseAuth.getCurrentUser();
                 if(user != null){
                     //user is signed in
-                    Toast.makeText(com.example.registerfirebase.login.this, "Signed In",Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(com.example.registerfirebase.login.this, "Signed In",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(login.this, HomeActivity.class);
                     startActivity(intent);
-                }else{
-                    //signed out
-                    Toast.makeText(com.example.registerfirebase.login.this, "Not Signed In",Toast.LENGTH_SHORT).show();
                 }
+//                else{
+//                    //signed out
+//                    Toast.makeText(com.example.registerfirebase.login.this, "Not Signed In",Toast.LENGTH_SHORT).show();
+//                }
             }
         };
 
@@ -85,7 +86,7 @@ public class login extends AppCompatActivity {
 
                     //progressDialog.dismiss();
                     Intent intent = new Intent(login.this, HomeActivity.class);
-                    //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );  //to clear stack of activities
                     startActivity(intent);
                 }
                 else{

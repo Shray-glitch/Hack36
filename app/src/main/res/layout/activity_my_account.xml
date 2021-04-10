@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".myAccount">
+
     <Button
         android:id="@+id/logout_button"
         android:layout_width="45dp"

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RegisterFirebase">
-        <activity android:name=".myAccount"></activity>
+        <activity android:name=".myAccount" />
         <activity android:name=".contactUs" />
         <activity
             android:name=".ViewAllActivity"

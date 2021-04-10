@@ -94,7 +94,7 @@ public class register extends AppCompatActivity {
                                                                      mProgressDialog.dismiss();
                                                                      //now send the user to homescreen
                                                                      Intent intent = new Intent(register.this, HomeActivity.class);
-                                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );  //to clear stack of activities
                                                                      startActivity(intent);
                                                                  }
                                                                  else {
