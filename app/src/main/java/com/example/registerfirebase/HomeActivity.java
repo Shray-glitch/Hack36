@@ -9,7 +9,10 @@ import android.widget.Button;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -51,11 +54,43 @@ public class HomeActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        //setting onclick for drawer fragments
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+            @Override
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
+                int menuId = destination.getId();
+                switch (menuId){
+                    case R.id.nav_my_wishlist:
+
+                        break;
+
+                    case R.id.nav_my_account:
+                        startActivity(new Intent(HomeActivity.this, myAccount.class));
+                        break;
+
+                    case R.id.nav_contact_us:
+                        startActivity(new Intent());
+                        break;
+
+                    case R.id.nav_my_shop:
+                        break;
+
+                    case R.id.nav_open_shop:
+                        break;
+
+                    case R.id.nav_home:
+                        break;
+
+                }
+            }
+        });
+
 //        setContentView(R.layout.content_main);
 //
         btnProduct = (Button)findViewById(R.id.product_details);
         btnWishlist = (Button)findViewById(R.id.wishlist);
 
+        //PRODUCT BUTTON ON HOME
         btnProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +99,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //WISHLIST BUTTON ON HOME
         btnWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
