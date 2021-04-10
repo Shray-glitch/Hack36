@@ -53,16 +53,16 @@ public class HomeActivity extends AppCompatActivity {
 
 //        setContentView(R.layout.content_main);
 //
-        btnProduct = (Button)findViewById(R.id.product_details);
+//        btnProduct = (Button)findViewById(R.id.product_details);
         btnWishlist = (Button)findViewById(R.id.wishlist);
 
-        btnProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent productDetailsIntent = new Intent(btnProduct.getContext(), ProductDetailsActivity.class);
-                btnProduct.getContext().startActivity(productDetailsIntent);
-            }
-        });
+//        btnProduct.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent = new Intent(btnProduct.getContext(), ProductDetailsActivity.class);
+//                btnProduct.getContext().startActivity(productDetailsIntent);
+//            }
+//        });
 
         btnWishlist.setOnClickListener(new View.OnClickListener() {
             @Override

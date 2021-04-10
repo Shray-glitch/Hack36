@@ -45,8 +45,8 @@ public class HomeFragment extends Fragment {
         gridProductLayoutModelList.add(new GridProductLayoutModel(R.drawable.dogs,"Cute Dogs", "Rs.9999/-"));
         gridProductLayoutModelList.add(new GridProductLayoutModel(R.drawable.dogs,"Cute Dogs", "Rs.9999/-"));
         gridProductLayoutModelList.add(new GridProductLayoutModel(R.drawable.dogs,"Cute Dogs", "Rs.9999/-"));
-//        gridProductLayoutModelList.add(new GridProductLayoutModel(R.drawable.dogs,"Cute Dogs", "Rs.9999/-"));
-//        gridProductLayoutModelList.add(new GridProductLayoutModel(R.drawable.dogs,"Cute Dogs", "Rs.9999/-"));
+        gridProductLayoutModelList.add(new GridProductLayoutModel(R.drawable.dogs,"Cute Dogs", "Rs.9999/-"));
+        gridProductLayoutModelList.add(new GridProductLayoutModel(R.drawable.dogs,"Cute Dogs", "Rs.9999/-"));
 
 
         /////// Grid Product
