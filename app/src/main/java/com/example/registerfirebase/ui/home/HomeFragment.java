@@ -48,8 +48,8 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        GridView gridView = view.findViewById(R.id.grid_product_layout_gridview);
-        TextView gridLayoutTitle = view.findViewById(R.id.grid_layout_title);
+//        GridView gridView = view.findViewById(R.id.grid_product_layout_gridview);
+//        TextView gridLayoutTitle = view.findViewById(R.id.grid_layout_title);
 
 //        List<GridProductLayoutModel> gridProductLayoutModelList = new ArrayList<>();
 //
