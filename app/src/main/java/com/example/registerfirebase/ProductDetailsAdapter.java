@@ -14,7 +14,7 @@ public class ProductDetailsAdapter extends FragmentPagerAdapter {
 //    }
 
     public ProductDetailsAdapter(@NonNull FragmentManager fm, int totalTabs) {
-        super(fm, totalTabs);
+        super(fm);
         this.totalTabs = totalTabs;
     }
 
@@ -33,13 +33,15 @@ public class ProductDetailsAdapter extends FragmentPagerAdapter {
                 ProductDescriptionFragment productDescriptionFragment2 = new ProductDescriptionFragment();
                 return productDescriptionFragment2;
 
-            default: return null;
+            default:  ProductDescriptionFragment productDescriptionFragment3 = new ProductDescriptionFragment();
+                return productDescriptionFragment3;
+                //return null;
 
         }
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return totalTabs;
     }
 }
