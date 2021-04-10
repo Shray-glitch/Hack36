@@ -1,5 +1,6 @@
 package com.example.registerfirebase.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.example.registerfirebase.GridProductLayoutAdapter;
 import com.example.registerfirebase.GridProductLayoutModel;
 import com.example.registerfirebase.ProductDetailsActivity;
 import com.example.registerfirebase.R;
+import com.example.registerfirebase.ViewAllActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -50,7 +52,45 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        Android = view.findViewById(R.id.android);
+        Web = view.findViewById(R.id.web);
+        Ml = view.findViewById(R.id.ml);
+        Design = view.findViewById(R.id.design);
 
+
+        Android.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewAllActivity.code = "itIeNsWIWrOa0fG7azw7";
+                Intent productDetailsIntent1 = new Intent(Android.getContext(), ViewAllActivity.class);
+                Android.getContext().startActivity(productDetailsIntent1);
+            }
+        });
+
+        Web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewAllActivity.code = "witvI87ih5iHfZ9zRjjm";
+                Intent productDetailsIntent1 = new Intent(Web.getContext(), ViewAllActivity.class);
+                Web.getContext().startActivity(productDetailsIntent1);
+            }
+        });
+
+        Ml.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent productDetailsIntent1 = new Intent(Ml.getContext(), ViewAllActivity.class);
+                Ml.getContext().startActivity(productDetailsIntent1);
+            }
+        });
+
+        Design.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent productDetailsIntent1 = new Intent(Design.getContext(), ViewAllActivity.class);
+                Design.getContext().startActivity(productDetailsIntent1);
+            }
+        });
 
 
 

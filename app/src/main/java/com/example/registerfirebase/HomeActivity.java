@@ -66,10 +66,42 @@ public class HomeActivity extends AppCompatActivity {
 //            }
 //        });
 
-        Android = findViewById(R.id.android);
-        Web = findViewById(R.id.web);
-        Ml = findViewById(R.id.ml);
-        Design = findViewById(R.id.design);
+//        Android = (ImageButton) findViewById(R.id.android);
+//        Web = (ImageButton)findViewById(R.id.web);
+//        Ml = (ImageButton)findViewById(R.id.ml);
+//        Design = (ImageButton)findViewById(R.id.design);
+
+//        Android.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Android.getContext(), ViewAllActivity.class);
+//                Android.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+//
+//        Web.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Web.getContext(), ViewAllActivity.class);
+//                Web.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+//
+//        Ml.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Ml.getContext(), ViewAllActivity.class);
+//                Ml.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+//
+//        Design.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Design.getContext(), ViewAllActivity.class);
+//                Design.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
 
 
         btnWishlist.setOnClickListener(new View.OnClickListener() {
