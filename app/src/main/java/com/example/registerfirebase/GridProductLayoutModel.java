@@ -2,21 +2,21 @@ package com.example.registerfirebase;
 
 public class GridProductLayoutModel {
 
-    private int productImage;
+    private String productImage;
     private String productTitle;
     private String productPrice;
 
-    public GridProductLayoutModel(int productImage, String productTitle, String productPrice) {
+    public GridProductLayoutModel(String productImage, String productTitle, String productPrice) {
         this.productImage = productImage;
         this.productTitle = productTitle;
         this.productPrice = productPrice;
     }
 
-    public int getProductImage() {
+    public String getProductImage() {
         return productImage;
     }
 
-    public void setProductImage(int productImage) {
+    public void setProductImage(String productImage) {
         this.productImage = productImage;
     }
 
