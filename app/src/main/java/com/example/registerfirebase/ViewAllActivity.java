@@ -6,8 +6,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ViewAllActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +25,26 @@ public class ViewAllActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Cute Dogs");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        recyclerView = findViewById(R.id.recycler_view);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        List<WishlistModel> wishlistModelList = new ArrayList<>();
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+        wishlistModelList.add(new WishlistModel(R.drawable.dogs,"Cute Dogs!!","Rs.10000/-"));
+
+        WishlistAdapter adapter = new WishlistAdapter(wishlistModelList,false);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
     }
     @Override
