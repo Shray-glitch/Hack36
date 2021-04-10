@@ -91,7 +91,7 @@ public class HomeActivity extends AppCompatActivity {
 //        setContentView(R.layout.content_main);
 //
         btnProduct = (Button)findViewById(R.id.product_details);
-        btnWishlist = (Button)findViewById(R.id.wishlist);
+
 
         //PRODUCT BUTTON ON HOME
         btnProduct.setOnClickListener(new View.OnClickListener() {
@@ -102,15 +102,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        //WISHLIST BUTTON ON HOME
-        btnWishlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent productDetailsIntent1 = new Intent(btnWishlist.getContext(), ViewAllActivity.class);
-                btnWishlist.getContext().startActivity(productDetailsIntent1);
-            }
-        });
-
+//        //WISHLIST BUTTON ON HOME
+//        btnWishlist.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(btnWishlist.getContext(), ViewAllActivity.class);
+//                btnWishlist.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+//
 
     }
 
