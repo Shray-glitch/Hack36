@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +21,8 @@ import androidx.appcompat.widget.Toolbar;
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    Button btnProduct;
+    Button btnProduct,btnWishlist;
+    private ImageButton Android,Web,Design,Ml;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +55,60 @@ public class HomeActivity extends AppCompatActivity {
 
 //        setContentView(R.layout.content_main);
 //
-        btnProduct = (Button)findViewById(R.id.product_details);
+//        btnProduct = (Button)findViewById(R.id.product_details);
+        btnWishlist = (Button)findViewById(R.id.wishlist);
 
-        btnProduct.setOnClickListener(new View.OnClickListener() {
+//        btnProduct.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent = new Intent(btnProduct.getContext(), ProductDetailsActivity.class);
+//                btnProduct.getContext().startActivity(productDetailsIntent);
+//            }
+//        });
+
+//        Android = (ImageButton) findViewById(R.id.android);
+//        Web = (ImageButton)findViewById(R.id.web);
+//        Ml = (ImageButton)findViewById(R.id.ml);
+//        Design = (ImageButton)findViewById(R.id.design);
+
+//        Android.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Android.getContext(), ViewAllActivity.class);
+//                Android.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+//
+//        Web.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Web.getContext(), ViewAllActivity.class);
+//                Web.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+//
+//        Ml.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Ml.getContext(), ViewAllActivity.class);
+//                Ml.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+//
+//        Design.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(Design.getContext(), ViewAllActivity.class);
+//                Design.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
+
+
+        btnWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent productDetailsIntent = new Intent(btnProduct.getContext(), ProductDetailsActivity.class);
-                btnProduct.getContext().startActivity(productDetailsIntent);
+                Intent productDetailsIntent1 = new Intent(btnWishlist.getContext(), ViewAllActivity.class);
+                btnWishlist.getContext().startActivity(productDetailsIntent1);
             }
         });
 
