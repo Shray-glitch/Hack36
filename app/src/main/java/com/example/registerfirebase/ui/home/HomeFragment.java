@@ -21,6 +21,8 @@ import com.example.registerfirebase.GridProductLayoutModel;
 import com.example.registerfirebase.ProductDetailsActivity;
 import com.example.registerfirebase.R;
 import com.example.registerfirebase.ViewAllActivity;
+import com.example.registerfirebase.contactUs;
+import com.example.registerfirebase.myAccount;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -35,6 +37,8 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private ImageButton Android,Web,Design,Ml;
+    private View contact;
+    private View account;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -56,6 +60,28 @@ public class HomeFragment extends Fragment {
         Web = view.findViewById(R.id.web);
         Ml = view.findViewById(R.id.ml);
         Design = view.findViewById(R.id.design);
+
+
+
+
+        contact = view.findViewById(R.id.contact_us);
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent productDetailsIntent1 = new Intent(contact.getContext(), contactUs.class);
+                contact.getContext().startActivity(productDetailsIntent1);
+            }
+        });
+
+        account = view.findViewById(R.id.account_my);
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent productDetailsIntent1 = new Intent(account.getContext(), myAccount.class);
+                account.getContext().startActivity(productDetailsIntent1);
+            }
+        });
+
 
 
         Android.setOnClickListener(new View.OnClickListener() {
