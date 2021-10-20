@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-
+// android is noice
 import com.example.registerfirebase.R;
 
 public class GalleryFragment extends Fragment {
