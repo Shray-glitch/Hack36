@@ -26,7 +26,7 @@ public class ProductImagesAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         ImageView productImage = new ImageView(container.getContext());
-//        productImage.setImageResource(productImages.get(position));
+//        productImage.setImageResource(productImages.get(position));  Not working
 
         Glide.with(container.getContext()).load(productImages.get(position)).apply(new RequestOptions().placeholder(R.mipmap.ic_launcher)).into(productImage);
 
