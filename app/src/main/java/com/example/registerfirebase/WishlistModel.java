@@ -1,18 +1,21 @@
 package com.example.registerfirebase;
 
 public class WishlistModel {
+
     private String productImage;
     private String productTitle;
     private String productPrice;
     private String speciality;
     private String experience;
+    private String mailBtn;
 
-    public WishlistModel(String productImage, String productTitle, String productPrice, String speciality, String experience) {
+    public WishlistModel(String productImage, String productTitle, String productPrice, String speciality, String experience,String mailBtn) {
         this.productImage = productImage;
         this.productTitle = productTitle;
         this.productPrice = productPrice;
         this.experience = experience;
         this.speciality = speciality;
+        this.mailBtn = mailBtn;
     }
 
     public String getSpeciality() {
@@ -53,5 +56,13 @@ public class WishlistModel {
 
     public void setProductPrice(String productPrice) {
         this.productPrice = productPrice;
+    }
+
+    public String getMailBtn() {
+        return mailBtn;
+    }
+
+    public void setMailBtn(String mailBtn) {
+        this.mailBtn = mailBtn;
     }
 }

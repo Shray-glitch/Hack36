@@ -33,7 +33,7 @@ public class ViewAllActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("Cute Dogs");
+        getSupportActionBar().setTitle("Categories");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = findViewById(R.id.recycler_view);
@@ -79,13 +79,14 @@ public class ViewAllActivity extends AppCompatActivity {
                                             documentSnapshot.get("title_"+x).toString(),
                                             documentSnapshot.get("price_"+x).toString(),
                                             documentSnapshot.get("special_"+x).toString(),
-                                            documentSnapshot.get("experience_"+x).toString()
+                                            documentSnapshot.get("experience_"+x).toString(),
+                                            documentSnapshot.get("mail").toString()
 
                                     )
                             );
                         }
 
-                        WishlistAdapter adapter = new WishlistAdapter(wishlistModelList,false);
+                        WishlistAdapter adapter = new WishlistAdapter(wishlistModelList,false, ViewAllActivity.this);
                         recyclerView.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
 

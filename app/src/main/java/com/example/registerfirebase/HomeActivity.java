@@ -1,5 +1,6 @@
 package com.example.registerfirebase;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import androidx.appcompat.view.menu.MenuView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     Button btnProduct,btnWishlist;
     private ImageButton Android,Web,Design,Ml;
+   // private Button contact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
 //        setContentView(R.layout.content_main);
 //
 //        btnProduct = (Button)findViewById(R.id.product_details);
-        btnWishlist = (Button)findViewById(R.id.wishlist);
+      //  btnWishlist = (Button)findViewById(R.id.wishlist);
 
 //        btnProduct.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -104,13 +107,13 @@ public class HomeActivity extends AppCompatActivity {
 //        });
 
 
-        btnWishlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent productDetailsIntent1 = new Intent(btnWishlist.getContext(), ViewAllActivity.class);
-                btnWishlist.getContext().startActivity(productDetailsIntent1);
-            }
-        });
+//        btnWishlist.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent productDetailsIntent1 = new Intent(btnWishlist.getContext(), ViewAllActivity.class);
+//                btnWishlist.getContext().startActivity(productDetailsIntent1);
+//            }
+//        });
 
 
     }
